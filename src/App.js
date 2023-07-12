@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactVideoPlayer from './ReactVideoPlayer';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="row">
+        <div className="column">
+          <ReactVideoPlayer videoSource="http://171.244.62.138:8088/hls/stream.m3u8" />
+        </div>
+        <div className="column">
+          <ReactVideoPlayer videoSource="http://171.244.62.138:8088/hls/stream.m3u8" />
+        </div>
+      </div>
+      <div className="row">
+        <div className="column">
+          <ReactVideoPlayer videoSource="https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8" />
+        </div>
+        <div className="column">
+          <ReactVideoPlayer videoSource="https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8" />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
