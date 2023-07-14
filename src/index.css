@@ -4,28 +4,6 @@
   align-items: center;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* Tỷ lệ 16:9 - thay đổi tỷ lệ tùy ý */
-  height: 0;
-  overflow: hidden;
-}
-
-.video-js.vjs-default-skin {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.dropdown-container {
+  margin: 20px;
 }
