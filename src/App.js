@@ -1,7 +1,5 @@
-// App.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FormControl, MenuItem, Select } from '@mui/material';
 import ReactVideoPlayer from './ReactVideoPlayer';
 import './App.css';
 
@@ -15,7 +13,6 @@ const App = () => {
         const response = await axios.get('/api/v1/event/get-cameras');
         const data = response.data;
         setCameraData(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -32,74 +29,95 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="container">
-        <div className="row">
-          <div className="column">
-            {cameraData.slice(0, 2).map((camera) => (
-              <div className="dropdown-container" key={camera.source_url}>
-                <FormControl>
-                  <Select
-                    value={selectedCameras[camera.source_url] || ''}
-                    onChange={(event) => handleCameraChange(event, camera.source_url)}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Select a camera' }}
-                  >
-                    <MenuItem value="" disabled>
-                      Select a camera
-                    </MenuItem>
-                    {cameraData.map((camera) => (
-                      <MenuItem key={camera.source_url} value={camera.source_url}>
-                        {camera.source_url}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="row">
-          <div className="column">
-            {cameraData.slice(2, 4).map((camera) => (
-              <div className="dropdown-container" key={camera.source_url}>
-                <FormControl>
-                  <Select
-                    value={selectedCameras[camera.source_url] || ''}
-                    onChange={(event) => handleCameraChange(event, camera.source_url)}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Select a camera' }}
-                  >
-                    <MenuItem value="" disabled>
-                      Select a camera
-                    </MenuItem>
-                    {cameraData.map((camera) => (
-                      <MenuItem key={camera.source_url} value={camera.source_url}>
-                        {camera.source_url}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
       <div className="video-container">
-        {Object.entries(selectedCameras).map(([cameraId, selectedCameraId], index) => {
-          const selectedCamera = cameraData.find((camera) => camera.source_url === selectedCameraId);
-          return (
-            <div key={index} className="video-player">
-              {selectedCamera && selectedCamera.camera_hls_streaming_endpoint ? (
-                <ReactVideoPlayer
-                  key={selectedCamera.camera_id}
-                  videoSource={selectedCamera.camera_hls_streaming_endpoint}
-                />
-              ) : (
-                <div className="placeholder"></div>
-              )}
-            </div>
-          );
-        })}
+        <div className="video-player top-left">
+          <div className="dropdown-container">
+            <select
+              value={selectedCameras['top-left'] || ''}
+              onChange={(event) => handleCameraChange(event, 'top-left')}
+            >
+              <option value="" disabled>
+                Select a camera
+              </option>
+              {cameraData.map((camera) => (
+                <option key={camera.source_url} value={camera.source_url}>
+                  {camera.source_url}
+                </option>
+              ))}
+            </select>
+          </div>
+          {selectedCameras['top-left'] && (
+            <ReactVideoPlayer
+              videoSource={selectedCameras['top-left']}
+            />
+          )}
+        </div>
+        <div className="video-player top-right">
+          <div className="dropdown-container">
+            <select
+              value={selectedCameras['top-right'] || ''}
+              onChange={(event) => handleCameraChange(event, 'top-right')}
+            >
+              <option value="" disabled>
+                Select a camera
+              </option>
+              {cameraData.map((camera) => (
+                <option key={camera.source_url} value={camera.source_url}>
+                  {camera.source_url}
+                </option>
+              ))}
+            </select>
+          </div>
+          {selectedCameras['top-right'] && (
+            <ReactVideoPlayer
+              videoSource={selectedCameras['top-right']}
+            />
+          )}
+        </div>
+        <div className="video-player bottom-left">
+          <div className="dropdown-container">
+            <select
+              value={selectedCameras['bottom-left'] || ''}
+              onChange={(event) => handleCameraChange(event, 'bottom-left')}
+            >
+              <option value="" disabled>
+                Select a camera
+              </option>
+              {cameraData.map((camera) => (
+                <option key={camera.source_url} value={camera.source_url}>
+                  {camera.source_url}
+                </option>
+              ))}
+            </select>
+          </div>
+          {selectedCameras['bottom-left'] && (
+            <ReactVideoPlayer
+              videoSource={selectedCameras['bottom-left']}
+            />
+          )}
+        </div>
+        <div className="video-player bottom-right">
+          <div className="dropdown-container">
+            <select
+              value={selectedCameras['bottom-right'] || ''}
+              onChange={(event) => handleCameraChange(event, 'bottom-right')}
+            >
+              <option value="" disabled>
+                Select a camera
+              </option>
+              {cameraData.map((camera) => (
+                <option key={camera.source_url} value={camera.source_url}>
+                  {camera.source_url}
+                </option>
+              ))}
+            </select>
+          </div>
+          {selectedCameras['bottom-right'] && (
+            <ReactVideoPlayer
+              videoSource={selectedCameras['bottom-right']}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
