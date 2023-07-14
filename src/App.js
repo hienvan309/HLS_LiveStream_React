@@ -14,10 +14,10 @@ const App = () => {
       </div>
       <div className="row">
         <div className="column">
-          <ReactVideoPlayer videoSource="https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8" />
+          <ReactVideoPlayer videoSource="http://171.244.62.138:8088/hls/stream.m3u8" />
         </div>
         <div className="column">
-          <ReactVideoPlayer videoSource="https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8" />
+          <ReactVideoPlayer videoSource="http://171.244.62.138:8088/hls/stream.m3u8" />
         </div>
       </div>
     </div>
