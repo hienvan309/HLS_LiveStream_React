@@ -18,6 +18,9 @@
 .dropdown-container {
   display: flex;
   flex-direction: column;
+  max-width: 300px; /* Độ rộng tối đa của dropdown container */
+  width: 100%; /* Chiếm hết không gian ngang */
+  margin-bottom: 10px;
 }
 
 .video-container {
@@ -32,8 +35,11 @@
 
 .video-player {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  transform: scale(1.6); /* Phóng to video player 1.2 lần */
+  transform-origin: top left; /* Đặt điểm phóng to là góc trên bên trái */
+  padding: 10px;
 }
 
 .video-player .placeholder {

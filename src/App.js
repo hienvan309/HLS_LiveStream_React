@@ -40,7 +40,7 @@ const App = () => {
                 Select a camera
               </option>
               {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.source_url}>
+                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -62,7 +62,7 @@ const App = () => {
                 Select a camera
               </option>
               {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.source_url}>
+                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -84,7 +84,7 @@ const App = () => {
                 Select a camera
               </option>
               {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.source_url}>
+                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -106,7 +106,7 @@ const App = () => {
                 Select a camera
               </option>
               {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.source_url}>
+                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
