@@ -75,6 +75,7 @@ const App = () => {
               videoSource={selectedCameras['top-right']}
             />
           )}
+          
         </div>
         <div className="video-player bottom-left">
           <div className="dropdown-container">
