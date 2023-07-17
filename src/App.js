@@ -39,8 +39,8 @@ const App = () => {
               <option value="" disabled>
                 Select a camera
               </option>
-              {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
+              {cameraData.map((camera, index) => (
+                <option key={index} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -48,6 +48,7 @@ const App = () => {
           </div>
           {selectedCameras['top-left'] && (
             <ReactVideoPlayer
+              key={selectedCameras['top-left']} // Thêm key vào ReactVideoPlayer
               videoSource={selectedCameras['top-left']}
             />
           )}
@@ -61,8 +62,8 @@ const App = () => {
               <option value="" disabled>
                 Select a camera
               </option>
-              {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
+              {cameraData.map((camera, index) => (
+                <option key={index} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -70,6 +71,7 @@ const App = () => {
           </div>
           {selectedCameras['top-right'] && (
             <ReactVideoPlayer
+              key={selectedCameras['top-right']} // Thêm key vào ReactVideoPlayer
               videoSource={selectedCameras['top-right']}
             />
           )}
@@ -83,8 +85,8 @@ const App = () => {
               <option value="" disabled>
                 Select a camera
               </option>
-              {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
+              {cameraData.map((camera, index) => (
+                <option key={index} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -92,6 +94,7 @@ const App = () => {
           </div>
           {selectedCameras['bottom-left'] && (
             <ReactVideoPlayer
+              key={selectedCameras['bottom-left']} // Thêm key vào ReactVideoPlayer
               videoSource={selectedCameras['bottom-left']}
             />
           )}
@@ -105,8 +108,8 @@ const App = () => {
               <option value="" disabled>
                 Select a camera
               </option>
-              {cameraData.map((camera) => (
-                <option key={camera.source_url} value={camera.camera_hls_streaming_endpoint}>
+              {cameraData.map((camera, index) => (
+                <option key={index} value={camera.camera_hls_streaming_endpoint}>
                   {camera.source_url}
                 </option>
               ))}
@@ -114,6 +117,7 @@ const App = () => {
           </div>
           {selectedCameras['bottom-right'] && (
             <ReactVideoPlayer
+              key={selectedCameras['bottom-right']} // Thêm key vào ReactVideoPlayer
               videoSource={selectedCameras['bottom-right']}
             />
           )}
