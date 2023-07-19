@@ -1,10 +1,14 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
+
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
 
+// Cấu hình CORS
 app.use(cors());
+
+
 
 module.exports = function (app) {
   app.use(
