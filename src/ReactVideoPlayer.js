@@ -16,7 +16,7 @@ const ReactVideoPlayer = ({ videoSource }) => {
 
   return (
     <div className="video-container">
-      <video ref={videoRef} preload='datameta' className="video-js vjs-default-skin" controls>
+      <video ref={videoRef} preload='datameta' autoPlay className="video-js vjs-default-skin" controls>
         <source src={videoSource} type="application/x-mpegURL" />
       </video>
     </div>
