@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ReactVideoPlayer from './ReactVideoPlayer';
@@ -77,7 +75,6 @@ const App = () => {
               videoSource={selectedCameras['top-right']}
             />
           )}
-          
         </div>
         <div className="video-player bottom-left">
           <div className="dropdown-container">
